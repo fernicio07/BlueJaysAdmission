@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Admisión - Colegio Puertorriqueño de Niñas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <h1>Colegio Puertorriqueño de Niñas</h1>
+                <p class="subtitle">Solicitud de Admisión</p>
+            </div>
+        </header>
+
+        <form id="admissionForm" class="admission-form">
+            <!-- Photo Upload Section -->
+            <section class="form-section">
+                <h2>Foto de la Estudiante</h2>
+                <div class="form-group">
+                    <label for="studentPhoto">Foto 2x2 *</label>
+                    <input type="file" id="studentPhoto" name="studentPhoto" accept="image/*" required>
+                    <div id="photoPreview" class="photo-preview"></div>
+                </div>
+            </section>
+
+            <!-- Student Information -->
+            <section class="form-section">
+                <h2>Información de la Estudiante</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apellidoPaterno">Apellido Paterno *</label>
+                        <input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoMaterno">Apellido Materno *</label>
+                        <input type="text" id="apellidoMaterno" name="apellidoMaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grado">Grado Solicitado *</label>
+                        <select id="grado" name="grado" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Pre-Kinder">Pre-Kinder</option>
+                            <option value="Kinder">Kinder</option>
+                            <option value="1">1ro</option>
+                            <option value="2">2do</option>
+                            <option value="3">3ro</option>
+                            <option value="4">4to</option>
+                            <option value="5">5to</option>
+                            <option value="6">6to</option>
+                            <option value="7">7mo</option>
+                            <option value="8">8vo</option>
+                            <option value="9">9no</option>
+                            <option value="10">10mo</option>
+                            <option value="11">11mo</option>
+                            <option value="12">12mo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edadAnos">Edad (años) *</label>
+                        <input type="number" id="edadAnos" name="edadAnos" min="0" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edadMeses">Edad (meses) *</label>
+                        <input type="number" id="edadMeses" name="edadMeses" min="0" max="11" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento *</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lugarNacimiento">Lugar de Nacimiento *</label>
+                        <input type="text" id="lugarNacimiento" name="lugarNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadania">Ciudadanía *</label>
+                        <input type="text" id="ciudadania" name="ciudadania" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="escuelaProcedencia">Escuela de Procedencia *</label>
+                        <input type="text" id="escuelaProcedencia" name="escuelaProcedencia" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="razonCambio">Razón del Cambio de Escuela *</label>
+                    <textarea id="razonCambio" name="razonCambio" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>La solicitante vive con: *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="viveCon" value="Padre" required>
+                            Padre
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="viveCon" value="Madre" required>
+                            Madre
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="viveCon" value="Ambos" required>
+                            Ambos
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="viveCon" value="Encargado" required>
+                            Encargado/a
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="encargadoGroup" style="display: none;">
+                    <label for="nombreEncargado">Nombre y parentesco de encargado/a</label>
+                    <input type="text" id="nombreEncargado" name="nombreEncargado">
+                </div>
+
+                <!-- Curso Escolar -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cursoInicio">Curso Escolar (inicio) *</label>
+                        <input type="text" id="cursoInicio" name="cursoInicio" placeholder="2025" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cursoFin">Curso Escolar (fin) *</label>
+                        <input type="text" id="cursoFin" name="cursoFin" placeholder="2026" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Father Information -->
+            <section class="form-section">
+                <h2>Información del Padre</h2>
+                
+                <div class="form-group">
+                    <label for="nombrePadre">Nombre Completo *</label>
+                    <input type="text" id="nombrePadre" name="nombrePadre" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lugarNacimientoPadre">Lugar de Nacimiento</label>
+                        <input type="text" id="lugarNacimientoPadre" name="lugarNacimientoPadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadaniaPadre">Ciudadanía</label>
+                        <input type="text" id="ciudadaniaPadre" name="ciudadaniaPadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ocupacionPadre">Ocupación</label>
+                        <input type="text" id="ocupacionPadre" name="ocupacionPadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="companiaPadre">Nombre de la Compañía</label>
+                        <input type="text" id="companiaPadre" name="companiaPadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telOficinaPadre">Teléfono Oficina</label>
+                        <input type="tel" id="telOficinaPadre" name="telOficinaPadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="telCelularPadre">Teléfono Celular *</label>
+                        <input type="tel" id="telCelularPadre" name="telCelularPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telResidencialPadre">Teléfono Residencial</label>
+                        <input type="tel" id="telResidencialPadre" name="telResidencialPadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emailPadre">Dirección Electrónica *</label>
+                        <input type="email" id="emailPadre" name="emailPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gradoAcademicoPadre">Último Grado Académico</label>
+                        <input type="text" id="gradoAcademicoPadre" name="gradoAcademicoPadre">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mother Information -->
+            <section class="form-section">
+                <h2>Información de la Madre</h2>
+                
+                <div class="form-group">
+                    <label for="nombreMadre">Nombre Completo *</label>
+                    <input type="text" id="nombreMadre" name="nombreMadre" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lugarNacimientoMadre">Lugar de Nacimiento</label>
+                        <input type="text" id="lugarNacimientoMadre" name="lugarNacimientoMadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadaniaMadre">Ciudadanía</label>
+                        <input type="text" id="ciudadaniaMadre" name="ciudadaniaMadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ocupacionMadre">Ocupación</label>
+                        <input type="text" id="ocupacionMadre" name="ocupacionMadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="companiaMadre">Nombre de la Compañía</label>
+                        <input type="text" id="companiaMadre" name="companiaMadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telOficinaMadre">Teléfono Oficina</label>
+                        <input type="tel" id="telOficinaMadre" name="telOficinaMadre">
+                    </div>
+                    <div class="form-group">
+                        <label for="telCelularMadre">Teléfono Celular *</label>
+                        <input type="tel" id="telCelularMadre" name="telCelularMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telResidencialMadre">Teléfono Residencial</label>
+                        <input type="tel" id="telResidencialMadre" name="telResidencialMadre">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emailMadre">Dirección Electrónica *</label>
+                        <input type="email" id="emailMadre" name="emailMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gradoAcademicoMadre">Último Grado Académico</label>
+                        <input type="text" id="gradoAcademicoMadre" name="gradoAcademicoMadre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Es Exalumna de CPN?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="exalumnaCPN" value="No">
+                            No
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="exalumnaCPN" value="Si">
+                            Sí
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="graduacionGroup" style="display: none;">
+                    <label for="anoGraduacion">Año de Graduación</label>
+                    <input type="text" id="anoGraduacion" name="anoGraduacion">
+                </div>
+            </section>
+
+            <!-- Medical/Educational History -->
+            <section class="form-section">
+                <h2>Historial Médico y Educativo</h2>
+                
+                <div class="form-group">
+                    <label>¿Su hija ha sido evaluada o diagnosticada por algún especialista? *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="evaluada" value="No" required>
+                            No
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="evaluada" value="Si" required>
+                            Sí
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="evaluacionDetails" style="display: none;">
+                    <label for="evaluacionExplicacion">Favor de explicar:</label>
+                    <textarea id="evaluacionExplicacion" name="evaluacionExplicacion" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Recibe o ha recibido algún tipo de terapia o tutoría? *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="terapia" value="No" required>
+                            No
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="terapia" value="Si" required>
+                            Sí
+                        </label>
+                    </div>
+                </div>
+
+                <div id="terapiaDetails" style="display: none;">
+                    <h3>Detalles de Terapia/Tutoría</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="terapia1">Terapia 1</label>
+                            <input type="text" id="terapia1" name="terapia1" placeholder="Tipo de terapia">
+                        </div>
+                        <div class="form-group">
+                            <label for="tiempoTerapia1">Tiempo que lleva</label>
+                            <input type="text" id="tiempoTerapia1" name="tiempoTerapia1">
+                        </div>
+                        <div class="form-group">
+                            <label for="frecuenciaTerapia1">Frecuencia (veces por semana)</label>
+                            <input type="text" id="frecuenciaTerapia1" name="frecuenciaTerapia1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="terapia2">Terapia 2</label>
+                            <input type="text" id="terapia2" name="terapia2" placeholder="Tipo de terapia">
+                        </div>
+                        <div class="form-group">
+                            <label for="tiempoTerapia2">Tiempo que lleva</label>
+                            <input type="text" id="tiempoTerapia2" name="tiempoTerapia2">
+                        </div>
+                        <div class="form-group">
+                            <label for="frecuenciaTerapia2">Frecuencia (veces por semana)</label>
+                            <input type="text" id="frecuenciaTerapia2" name="frecuenciaTerapia2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="terapia3">Terapia 3</label>
+                            <input type="text" id="terapia3" name="terapia3" placeholder="Tipo de terapia">
+                        </div>
+                        <div class="form-group">
+                            <label for="tiempoTerapia3">Tiempo que lleva</label>
+                            <input type="text" id="tiempoTerapia3" name="tiempoTerapia3">
+                        </div>
+                        <div class="form-group">
+                            <label for="frecuenciaTerapia3">Frecuencia (veces por semana)</label>
+                            <input type="text" id="frecuenciaTerapia3" name="frecuenciaTerapia3">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Address Information -->
+            <section class="form-section">
+                <h2>Información de Direcciones</h2>
+                
+                <div class="form-group">
+                    <label for="personaResponsable">Persona Responsable de los Pagos *</label>
+                    <input type="text" id="personaResponsable" name="personaResponsable" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccionCorrespondencia">Dirección para Correspondencia *</label>
+                    <textarea id="direccionCorrespondencia" name="direccionCorrespondencia" rows="2" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccionFacturas">Dirección para Facturas *</label>
+                    <textarea id="direccionFacturas" name="direccionFacturas" rows="2" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emailCorrespondencia">Email para Correspondencia *</label>
+                        <input type="email" id="emailCorrespondencia" name="emailCorrespondencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailEstudiante">Email de la Estudiante</label>
+                        <input type="email" id="emailEstudiante" name="emailEstudiante">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Siblings Information -->
+            <section class="form-section">
+                <h2>Información de Hermanos</h2>
+                
+                <h3>Hermanos de la Solicitante</h3>
+                <div class="siblings-container" id="siblingsContainer">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hermano1Nombre">Nombre</label>
+                            <input type="text" id="hermano1Nombre" name="hermano1Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="hermano1Edad">Edad</label>
+                            <input type="text" id="hermano1Edad" name="hermano1Edad">
+                        </div>
+                        <div class="form-group">
+                            <label for="hermano1Escuela">Escuela</label>
+                            <input type="text" id="hermano1Escuela" name="hermano1Escuela">
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Familiares Estudiando en el Colegio</h3>
+                <div class="familiares-container" id="familiaresContainer">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="familiar1Nombre">Nombre</label>
+                            <input type="text" id="familiar1Nombre" name="familiar1Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="familiar1Grado">Grado</label>
+                            <input type="text" id="familiar1Grado" name="familiar1Grado">
+                        </div>
+                        <div class="form-group">
+                            <label for="familiar1Parentesco">Parentesco</label>
+                            <input type="text" id="familiar1Parentesco" name="familiar1Parentesco">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Projects Fund -->
+            <section class="form-section">
+                <h2>Aceptación del Fondo de Proyectos Especiales</h2>
+                <div class="info-box">
+                    <p>Se le requiere un pago de <strong>$1,500.00</strong> a todas las familias que matriculen a sus hijas. Este se comienza a pagar de quinto grado en adelante.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Seleccione el plan de pago: *</label>
+                    <div class="radio-group-vertical">
+                        <label class="radio-label-block">
+                            <input type="radio" name="planPago" value="Plan I" required>
+                            <strong>Plan I</strong> - $1,500.00 a pagarse en un año mediante diez plazos de $150.00 cada uno
+                        </label>
+                        <label class="radio-label-block">
+                            <input type="radio" name="planPago" value="Plan II" required>
+                            <strong>Plan II</strong> - $1,500.00 a pagarse en dos años mediante diez plazos de $75.00 cada uno
+                        </label>
+                        <label class="radio-label-block">
+                            <input type="radio" name="planPago" value="Plan T" required>
+                            <strong>Plan T</strong> - $1,500.00 a pagarse en su totalidad al comenzar el curso escolar
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Security Authorization -->
+            <section class="form-section">
+                <h2>Autorización para Uso del Seguro Social</h2>
+                
+                <div class="info-box">
+                    <p>El seguro social sólo se utilizará para propósitos oficiales legítimos, cuando sea requerido por las autoridades universitarias, gubernamentales y educativas siempre que se relacione con gestiones en las cuales exista necesidad legítima.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="autorizaSeguroSocial" name="autorizaSeguroSocial" required>
+                        Autorizo el uso del número de seguro social de mi hija *
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ultimosCuatroSSN">Últimos cuatro dígitos del Seguro Social *</label>
+                        <input type="text" id="ultimosCuatroSSN" name="ultimosCuatroSSN" maxlength="4" pattern="[0-9]{4}" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="nombreSSN">Nombre como aparece en la tarjeta de seguro social *</label>
+                        <input type="text" id="nombreSSN" name="nombreSSN" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Signature Section -->
+            <section class="form-section">
+                <h2>Firma del Padre, Madre o Encargado</h2>
+                
+                <div class="signature-container">
+                    <canvas id="signatureCanvas" width="600" height="200"></canvas>
+                    <button type="button" id="clearSignature" class="btn-secondary">Limpiar Firma</button>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmSignature" name="confirmSignature" required>
+                        Confirmo que la información proporcionada es correcta y que he firmado digitalmente este formulario *
+                    </label>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Enviar Solicitud</button>
+            </div>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h2>¡Solicitud Enviada Exitosamente!</h2>
+            <p>Gracias por su solicitud. Nos pondremos en contacto con usted pronto.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
