@@ -47,9 +47,10 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="grado">Grado Solicitado *</label>
+                        <label for="grado">Grado a cursar *</label>
                         <select id="grado" name="grado" required>
                             <option value="">Seleccione...</option>
+                            <option value="Pre-Pre">Pre-Pre</option>
                             <option value="Pre-Kinder">Pre-Kinder</option>
                             <option value="Kinder">Kinder</option>
                             <option value="1">1ro</option>
@@ -63,15 +64,14 @@
                             <option value="9">9no</option>
                             <option value="10">10mo</option>
                             <option value="11">11mo</option>
-                            <option value="12">12mo</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="edadAnos">Edad (años) *</label>
+                        <label for="edadAnos">Edad actual (años) *</label>
                         <input type="number" id="edadAnos" name="edadAnos" min="0" max="20" required>
                     </div>
                     <div class="form-group">
-                        <label for="edadMeses">Edad (meses) *</label>
+                        <label for="edadMeses">Edad actual (meses) *</label>
                         <input type="number" id="edadMeses" name="edadMeses" min="0" max="11" required>
                     </div>
                 </div>
@@ -133,12 +133,8 @@
                 <!-- Curso Escolar -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="cursoInicio">Curso Escolar (inicio) *</label>
+                        <label for="cursoInicio">Curso Escolar *</label>
                         <input type="text" id="cursoInicio" name="cursoInicio" placeholder="2025" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cursoFin">Curso Escolar (fin) *</label>
-                        <input type="text" id="cursoFin" name="cursoFin" placeholder="2026" required>
                     </div>
                 </div>
             </section>
@@ -148,8 +144,8 @@
                 <h2>Información del Padre</h2>
                 
                 <div class="form-group">
-                    <label for="nombrePadre">Nombre Completo *</label>
-                    <input type="text" id="nombrePadre" name="nombrePadre" required>
+                    <label for="nombrePadre">Nombre Completo</label>
+                    <input type="text" id="nombrePadre" name="nombrePadre">
                 </div>
 
                 <div class="form-row">
@@ -180,8 +176,8 @@
                         <input type="tel" id="telOficinaPadre" name="telOficinaPadre">
                     </div>
                     <div class="form-group">
-                        <label for="telCelularPadre">Teléfono Celular *</label>
-                        <input type="tel" id="telCelularPadre" name="telCelularPadre" required>
+                        <label for="telCelularPadre">Teléfono Celular</label>
+                        <input type="tel" id="telCelularPadre" name="telCelularPadre">
                     </div>
                     <div class="form-group">
                         <label for="telResidencialPadre">Teléfono Residencial</label>
@@ -191,8 +187,8 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="emailPadre">Dirección Electrónica *</label>
-                        <input type="email" id="emailPadre" name="emailPadre" required>
+                        <label for="emailPadre">Dirección Electrónica</label>
+                        <input type="email" id="emailPadre" name="emailPadre">
                     </div>
                     <div class="form-group">
                         <label for="gradoAcademicoPadre">Último Grado Académico</label>
